@@ -1,0 +1,12 @@
+2017-08-14 13:52:56 Error: [Cake\Console\Exception\MissingShellException] Shell class for "CakeDC/Users.Users" could not be found. in C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'CakeDC/Users.Users',
+)
+Stack Trace:
+#0 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('users')
+#1 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\wamp\www\questoes_concursos\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+

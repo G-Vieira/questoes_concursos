@@ -1,0 +1,21 @@
+2017-08-14 17:14:46 Notice: Strict (2048): Declaration of App\Controller\UsersController::beforeFilter() should be compatible with App\Controller\AppController::beforeFilter(Cake\Event\Event $event) in [C:\wamp\www\questoes_concursos\src\Controller\UsersController.php, line 14]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Controller\UsersController.php, line 14
+Composer\Autoload\includeFile - ROOT\vendor\composer\ClassLoader.php, line 444
+Composer\Autoload\ClassLoader::loadClass() - ROOT\vendor\composer\ClassLoader.php, line 322
+spl_autoload_call - [internal], line ??
+class_exists - [internal], line ??
+Cake\Core\App::_classExistsInBase() - CORE\src\Core\App.php, line 152
+Cake\Core\App::className() - CORE\src\Core\App.php, line 64
+Bake\Shell\Task\TemplateTask::controller() - ROOT\vendor\cakephp\bake\src\Shell\Task\TemplateTask.php, line 198
+Bake\Shell\Task\TemplateTask::main() - ROOT\vendor\cakephp\bake\src\Shell\Task\TemplateTask.php, line 135
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 472
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 465
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 230
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 182
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 128
+[main] - ROOT\bin\cake.php, line 34
+
+
+
