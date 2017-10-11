@@ -35,21 +35,6 @@ $cakeDescription = 'Sobre';
       </div>
     </div>
   </div>
-  <div class="large-5 columns">
-    <div class="profile-card" style="background: url(<?php echo $this->Url->build('/', true)?>/webroot/img/scheila_back_logo.jpg)">
-      <div class="header">
-        <a href="https://www.facebook.com/scheila.kurz">
-          <?= $this->Html->image('scheila_logo.jpg'); ?>
-        </a>
-        <h1>Scheila Kurz</h1>
-        <h2> - Interface Designer - </h2>
-      </div>
-      <div class="profile-bio">
-        <p>Dae pessoal!</p>
-        <p>vazio</p>
-      </div>
-    </div>
-  </div>
   <div class="large-4 columns">
     <div class="profile-card" style="background: url(<?php echo $this->Url->build('/', true)?>/webroot/img/gian_back_logo.jpg)">
       <div class="header">
