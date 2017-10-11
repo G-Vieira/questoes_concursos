@@ -2,21 +2,21 @@
 Trabalho final de Linguagem de Programação 4, Ciencia da Computação <br>
 IFRS Campus Ibiruba <br>
 
-Desenvolvido por Gian Paulo e Lisiane Reips
+Desenvolvido por Gian Paulo e Lisiane Reips <br>
 
-Desenvolvido com CAKE PHP e suas dependencias, usando banco mysql.
+Desenvolvido com CAKE PHP e suas dependencias, usando banco mysql. <br>
 
-Em desenvolvimento..
+Em desenvolvimento.. <br>
 
-Site para realização de questões de concurso.
-Versão 1.0 (e provavelmente a unica, kkkk)
---> Apenas adminsitradores do site( no sentido da aplicação) podem fazer login.
---> Cadastro de Usuarios
---> Cadastro de Concursos
---> Cadastro de Provas
---> Cadastro de Perguntas e Respostas
---> Realização das Perguntas (por implementar)
---> Exibição de estatiscas das provas pelas respotas dos visitantes(por implementar)
+Site para realização de questões de concurso.<br>
+Versão 1.0 (e provavelmente a unica, kkkk)<br>
+--> Apenas adminsitradores do site( no sentido da aplicação) podem fazer login.<br>
+--> Cadastro de Usuarios<br>
+--> Cadastro de Concursos<br>
+--> Cadastro de Provas<br>
+--> Cadastro de Perguntas e Respostas<br>
+--> Realização das Perguntas (por implementar)<br>
+--> Exibição de estatiscas das provas pelas respotas dos visitantes(por implementar)<br>
 
-OBS
-Pasta propt_db contém o banco da aplicação
+OBS<br>
+Pasta propt_db contém o banco da aplicação<br>
