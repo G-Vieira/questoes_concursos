@@ -1,10 +1,8 @@
-# Projeto de Site para resolução de questões de Concursos
-Trabalho final de Linguagem de Programação 4, Ciencia da Computação
-IFRS Campus Ibiruba
+# Projeto de Site para resolução de questões de Concursos <br>
+Trabalho final de Linguagem de Programação 4, Ciencia da Computação <br>
+IFRS Campus Ibiruba <br>
 
-Desenvolvido por 
-  Gian Paulo
-  Lisiane Reips
+Desenvolvido por Gian Paulo e Lisiane Reips
 
 Desenvolvido com CAKE PHP e suas dependencias, usando banco mysql.
 
