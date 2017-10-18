@@ -172,6 +172,5 @@ trait FunctionNamesTrait
     public function __wakeup()
     {
     }
+    public function __passingOutside() {}
 }
-
-public function __passingOutside() {}

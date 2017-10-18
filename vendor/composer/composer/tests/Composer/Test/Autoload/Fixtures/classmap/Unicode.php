@@ -1,6 +1,7 @@
 <?php
-
+/*
 namespace Unicode\↑;
 
 class ↑{
 }
+*/

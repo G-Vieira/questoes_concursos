@@ -13,7 +13,7 @@ $a = [ $something & $somethingElse ];
 $a = [ $first, $something & self::$somethingElse ];
 
 /* bitwiseAndD */
-$a = array $first, $something & $somethingElse );
+$a = array ($first, $something & $somethingElse );
 
 /* bitwiseAndE */
 $a = [ 'a' => $first, 'b' => $something & $somethingElse ];

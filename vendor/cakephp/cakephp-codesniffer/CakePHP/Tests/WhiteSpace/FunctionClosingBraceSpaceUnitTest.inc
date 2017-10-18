@@ -22,10 +22,10 @@ function someOtherPassingFunction()
 
 class Foo
 {
-    public function fail1 {}
-    public function fail2 {
+    public function fail1 (){}
+    public function fail2 (){
 
     }
-    public function fail3 {
+    public function fail3 (){
     echo "fails";}
 }
