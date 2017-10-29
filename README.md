@@ -18,5 +18,5 @@ Versão 1.0 (e provavelmente a unica, kkkk)<br>
 --> Realização das Perguntas (por implementar)<br>
 --> Exibição de estatiscas das provas pelas respotas dos visitantes(por implementar)<br>
 
-OBS<br>
+Obs<br>
 Pasta propt_db contém o banco da aplicação<br>
