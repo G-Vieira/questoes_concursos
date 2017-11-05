@@ -23,13 +23,13 @@
             $select_perguntas = "<select required name='pergunta_id'>";
           
             foreach($provas as $prova){
-              $select_provas .= "<option value = '" . $prova->id . "' />" . $prova->id . $prova->nome . "</option>";
+              $select_provas .= "<option value = '" . $prova->id . "' />" . $prova->id . " - " .  $prova->nome . "</option>";
             }            
             
             foreach($perguntas as $pergunta){
-              $select_perguntas .= "<option value = '" . $pergunta->id . "' />" . $pergunta->id . $pergunta->nome . "</option>";
+              $select_perguntas .= "<option value = '" . $pergunta->id . "' />" . $pergunta->id . " - " . $pergunta->nome . "</option>";
             }
-        
+         
             $select_provas .= "</select>";
             $select_perguntas .= "</select>";
             

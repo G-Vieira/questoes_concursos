@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -10,16 +11,14 @@ use App\Controller\AppController;
  *
  * @method \App\Model\Entity\PerguntasProva[] paginate($object = null, array $settings = [])
  */
-class PerguntasProvasController extends AppController
-{
+class PerguntasProvasController extends AppController {
 
     /**
      * Index method
      *
      * @return \Cake\Http\Response|void
      */
-    public function index()
-    {
+    public function index() {
         $this->paginate = [
             'contain' => ['Perguntas', 'Provas']
         ];
@@ -29,6 +28,26 @@ class PerguntasProvasController extends AppController
         $this->set('_serialize', ['perguntasProvas']);
     }
 
+    public function responder($id = null) {
+        $perguntasProva = $this->PerguntasProvas->find('all');
+        $data = $perguntasProva->toArray();
+        $listPerguntas = array();
+
+        if ($this->request->is('post')) {
+           //quando for submetido
+        } else {
+            foreach ($data as $res) {
+                $comb = $res->toArray();
+                if ($comb['prova_id'] == $id) {
+                    array_push($listPerguntas, $this->PerguntasProvas->Perguntas->get($comb['pergunta_id']));
+                }
+            }
+
+            $this->set('listPerguntas', $listPerguntas);
+            $this->set('_serialize', ['listPerguntas']);
+        }
+    }
+
     /**
      * View method
      *
@@ -36,8 +55,7 @@ class PerguntasProvasController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
+    public function view($id = null) {
         $perguntasProva = $this->PerguntasProvas->get($id, [
             'contain' => ['Perguntas', 'Provas']
         ]);
@@ -51,8 +69,7 @@ class PerguntasProvasController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
-    {
+    public function add() {
         $perguntasProva = $this->PerguntasProvas->newEntity();
         if ($this->request->is('post')) {
             $perguntasProva = $this->PerguntasProvas->patchEntity($perguntasProva, $this->request->getData());
@@ -63,10 +80,11 @@ class PerguntasProvasController extends AppController
             }
             $this->Flash->error(__('A associação não foi salva.'));
         }
-        $perguntas = $this->PerguntasProvas->Perguntas->find('list', ['limit' => 200]);
-        $provas = $this->PerguntasProvas->Provas->find('list', ['limit' => 200]);
+        $perguntas = $this->PerguntasProvas->Perguntas->find('all');
+        $provas = $this->PerguntasProvas->Provas->find('all');
+
         $this->set(compact('perguntasProva', 'perguntas', 'provas'));
-        $this->set('_serialize', ['perguntasProva','perguntas','provas']);
+        $this->set('_serialize', ['perguntasProva', 'perguntas', 'provas']);
     }
 
     /**
@@ -76,8 +94,7 @@ class PerguntasProvasController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
-    {
+    public function edit($id = null) {
         $perguntasProva = $this->PerguntasProvas->get($id, [
             'contain' => []
         ]);
@@ -90,10 +107,10 @@ class PerguntasProvasController extends AppController
             }
             $this->Flash->error(__('A associação não foi atualizada.'));
         }
-        $perguntas = $this->PerguntasProvas->Perguntas->find('list', ['limit' => 200]);
-        $provas = $this->PerguntasProvas->Provas->find('list', ['limit' => 200]);
+        $perguntas = $this->PerguntasProvas->Perguntas->find('all');
+        $provas = $this->PerguntasProvas->Provas->find('all');
         $this->set(compact('perguntasProva', 'perguntas', 'provas'));
-        $this->set('_serialize', ['perguntasProva','perguntas','provas']);
+        $this->set('_serialize', ['perguntasProva', 'perguntas', 'provas']);
     }
 
     /**
@@ -103,8 +120,7 @@ class PerguntasProvasController extends AppController
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null)
-    {
+    public function delete($id = null) {
         $this->request->allowMethod(['post', 'delete']);
         $perguntasProva = $this->PerguntasProvas->get($id);
         if ($this->PerguntasProvas->delete($perguntasProva)) {
@@ -115,4 +131,5 @@ class PerguntasProvasController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
 }

@@ -47,7 +47,7 @@ $cakeDescription = 'Questões para Concurso';
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Painel') ?></li>
-        <li><?= $this->Html->link(__(''), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lista de provas'), ['controller' => 'Provas','action' => 'listar']) ?></li>
     </ul>
 </nav>
 

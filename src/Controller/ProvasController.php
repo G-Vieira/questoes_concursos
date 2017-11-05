@@ -1,8 +1,9 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\Event\Event;	
+use Cake\Event\Event;
 
 /**
  * Provas Controller
@@ -11,13 +12,11 @@ use Cake\Event\Event;
  *
  * @method \App\Model\Entity\Prova[] paginate($object = null, array $settings = [])
  */
-class ProvasController extends AppController
-{
+class ProvasController extends AppController {
 
-	  public function beforeFilter(Event $event)
-    {
-      parent::beforeFilter($event);
-      $this->Auth->deny(['index', 'view','edit','delete']);
+    public function beforeFilter(Event $event) {
+        parent::beforeFilter($event);
+        $this->Auth->deny(['index', 'view', 'edit', 'delete']);
     }
 
     /**
@@ -25,14 +24,20 @@ class ProvasController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function index()
-    {
+    public function index() {
         $provas = $this->paginate($this->Provas);
 
         $this->set(compact('provas'));
         $this->set('_serialize', ['provas']);
     }
+    
+    public function listar(){
+        $provas = $this->paginate($this->Provas);
 
+        $this->set(compact('provas'));
+        $this->set('_serialize', ['provas']);
+    }
+    
     /**
      * View method
      *
@@ -40,8 +45,7 @@ class ProvasController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
+    public function view($id = null) {
         $prova = $this->Provas->get($id, [
             'contain' => []
         ]);
@@ -55,8 +59,7 @@ class ProvasController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
-    {
+    public function add() {
         $prova = $this->Provas->newEntity();
         if ($this->request->is('post')) {
             $prova = $this->Provas->patchEntity($prova, $this->request->getData());
@@ -69,10 +72,9 @@ class ProvasController extends AppController
         }
         $this->set(compact('prova'));
         $this->set('_serialize', ['prova']);
-        
+
         $concursos = $this->Provas->Concursos->find('all');
         $this->set('concursos', $concursos);
-        
     }
 
     /**
@@ -82,8 +84,7 @@ class ProvasController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
-    {
+    public function edit($id = null) {
         $prova = $this->Provas->get($id, [
             'contain' => []
         ]);
@@ -98,10 +99,9 @@ class ProvasController extends AppController
         }
         $this->set(compact('prova'));
         $this->set('_serialize', ['prova']);
-        
+
         $concursos = $this->Provas->Concursos->find('all');
         $this->set('concursos', $concursos);
-        
     }
 
     /**
@@ -111,8 +111,7 @@ class ProvasController extends AppController
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null)
-    {
+    public function delete($id = null) {
         $this->request->allowMethod(['post', 'delete']);
         $prova = $this->Provas->get($id);
         if ($this->Provas->delete($prova)) {
@@ -123,4 +122,5 @@ class ProvasController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
 }

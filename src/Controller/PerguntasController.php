@@ -25,7 +25,7 @@ class PerguntasController extends AppController
         $this->set(compact('perguntas'));
         $this->set('_serialize', ['perguntas']);
     }
-
+    
     /**
      * View method
      *
