@@ -33,8 +33,16 @@ class PerguntasProvasController extends AppController {
         $data = $perguntasProva->toArray();
         $listPerguntas = array();
 
+	$tblRespostas = "";
+	
         if ($this->request->is('post')) {
            //quando for submetido
+	  
+	  $i = 1;
+	  while(isset($_POST["P$i"])){
+	    print_r($_POST["P$i"]);
+	    $i++;
+	  }
         } else {
             foreach ($data as $res) {
                 $comb = $res->toArray();
@@ -42,10 +50,11 @@ class PerguntasProvasController extends AppController {
                     array_push($listPerguntas, $this->PerguntasProvas->Perguntas->get($comb['pergunta_id']));
                 }
             }
-
-            $this->set('listPerguntas', $listPerguntas);
-            $this->set('_serialize', ['listPerguntas']);
         }
+        $this->set('listPerguntas', $listPerguntas);
+	$this->set('tblRespostas',$tblRespostas);
+	
+        $this->set('_serialize', ['listPerguntas','tblRespostas']);
     }
 
     /**
