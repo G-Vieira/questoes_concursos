@@ -18,7 +18,6 @@
       }
       echo "<input type='hidden' name='keys' value='" . $valores . "'>";
       
-      
       if(count($listPerguntas) != 0){
         $num = 1;
         foreach($listPerguntas as $pergunta){
@@ -41,6 +40,7 @@
 	  ?>
 	  
           <!--respostas-->
+	  <h3><?= h($num . " - " .  $pergunta->nome) ?></h3>
 	  <!--
            $num - Nome questao
             Resposta do usuario
