@@ -38,10 +38,15 @@
 
       //quando for submetido
       if ($this->request->is('post')) {
-        $pkeys = $_POST['keys'];
-	foreach($pkeys as $pk){
-	  array_push($tblRespostas,$this->PerguntasProvas->Perguntas->get($pk));
-	  array_push($keys,$pk);
+	$pkeys = $_POST['keys'];
+	$pkeys = explode(',', $pkeys);
+
+	foreach ($pkeys as $pk) {
+	  if ($pk == null) {
+	    break;
+	  }
+	  array_push($tblRespostas, $this->PerguntasProvas->Perguntas->get($pk));
+	  array_push($keys, $pk);
 	}
       }
       else {
@@ -49,13 +54,13 @@
 	  $comb = $res->toArray();
 	  if ($comb['prova_id'] == $id) {
 	    array_push($listPerguntas, $this->PerguntasProvas->Perguntas->get($comb['pergunta_id']));
-	    array_push($keys,$comb['pergunta_id']);
+	    array_push($keys, $comb['pergunta_id']);
 	  }
 	}
       }
       $this->set('listPerguntas', $listPerguntas);
-      $this->set('tblRespostas',$tblRespostas);
-      $this->set('keys',$keys);
+      $this->set('tblRespostas', $tblRespostas);
+      $this->set('keys', $keys);
 
       $this->set('_serialize', ['listPerguntas', 'tblRespostas', 'keys']);
     }

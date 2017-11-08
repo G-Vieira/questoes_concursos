@@ -42,7 +42,7 @@ class PerguntasController extends AppController
         $this->set('pergunta', $pergunta);
         $this->set('_serialize', ['pergunta']);
     }
-
+    
     /**
      * Add method
      *

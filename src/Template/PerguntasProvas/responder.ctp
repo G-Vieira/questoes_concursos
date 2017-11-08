@@ -14,7 +14,7 @@
     <?php 
       $valores = "";
       foreach($keys as $key){
-	$valores .= $key . ",";
+	      $valores .= $key . ",";
       }
       echo "<input type='hidden' name='keys' value='" . $valores . "'>";
       
@@ -36,21 +36,14 @@
         echo "<br><button type='submit'>Salvar</button>";
       }else{
 	$num = 1;
-	foreach($tblRespostas as $respostas){
-	  ?>
-	  
-          <!--respostas-->
-	  <h3><?= h($num . " - " .  $pergunta->nome) ?></h3>
-	  <!--
-           $num - Nome questao
-            Resposta do usuario
-            se incorreta(
-               resposta certa)
-            explicacao
-          -->
-    
-          <?php
-	  $num++;
+	foreach($tblRespostas as $chave => $resposta){
+           echo "<h3>" . $num . " - " . $resposta->nome . "</h3>";
+	   echo "<label>Resposta correta: " . $resposta->get_resp_by_id($resposta->resposta) . "</label><br>";
+	   
+	   if($keys[$chave] != $resposta->resposta){
+	     echo "<label>Errou!<br>Sua resposta: " . $resposta->get_resp_by_id($keys[$chave]) . "</label><br>"; 
+	   }
+	   echo "<label>Explicação: " . $resposta->explicacao . "</label><br>";
 	}
 	echo "<br><br>" . $this->Html->link(__('Voltar para a pagina de provas'), ['controller' => 'Provas' ,'action' => 'listar']);
       }

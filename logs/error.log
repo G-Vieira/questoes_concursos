@@ -2737,3 +2737,221 @@ Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
 
 
 
+2017-11-08 11:34:19 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\wamp\www\questoes_concursos\src\Controller\PerguntasProvasController.php, line 42]
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\PerguntasProvasController::responder() - APP/Controller\PerguntasProvasController.php, line 42
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 103
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 106
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 95
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+DebugKit\Middleware\DebugKitMiddleware::__invoke() - ROOT\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 52
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-11-08 11:34:19 Warning: Warning (512): Unable to emit headers. Headers sent in file=C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Debugger.php line=850 in [C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 48]
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 48
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-11-08 11:34:19 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Debugger.php:850) in [C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 149]
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 149
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 54
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-11-08 11:34:19 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Debugger.php:850) in [C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 55
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-11-08 11:34:19 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Debugger.php:850) in [C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 55
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-11-08 11:35:05 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "perguntas"
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Stack Trace:
+#0 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\ORM\Table.php(1441): Cake\ORM\Query->firstOrFail()
+#1 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\ORM\Association.php(1365): Cake\ORM\Table->get('')
+#2 C:\wamp\www\questoes_concursos\src\Controller\PerguntasProvasController.php(45): Cake\ORM\Association->__call('get', Array)
+#3 C:\wamp\www\questoes_concursos\src\Controller\PerguntasProvasController.php(45): Cake\ORM\Association\BelongsTo->get('')
+#4 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\PerguntasProvasController->responder('1')
+#5 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#6 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PerguntasProvasController))
+#7 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\BaseApplication.php(103): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(106): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#13 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(95): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 C:\wamp\www\questoes_concursos\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\wamp\www\questoes_concursos\webroot\index.php(37): Cake\Http\Server->run()
+#20 {main}
+
+
+2017-11-08 11:35:38 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "perguntas"
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Stack Trace:
+#0 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\ORM\Table.php(1441): Cake\ORM\Query->firstOrFail()
+#1 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\ORM\Association.php(1365): Cake\ORM\Table->get('')
+#2 C:\wamp\www\questoes_concursos\src\Controller\PerguntasProvasController.php(47): Cake\ORM\Association->__call('get', Array)
+#3 C:\wamp\www\questoes_concursos\src\Controller\PerguntasProvasController.php(47): Cake\ORM\Association\BelongsTo->get('')
+#4 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\PerguntasProvasController->responder('1')
+#5 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#6 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PerguntasProvasController))
+#7 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\BaseApplication.php(103): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(106): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#13 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(95): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 C:\wamp\www\questoes_concursos\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\wamp\www\questoes_concursos\webroot\index.php(37): Cake\Http\Server->run()
+#20 {main}
+
+
+2017-11-08 11:52:22 Error: Fatal Error (1): Call to undefined method App\Model\Entity\Pergunta::get_resp_by_id() in [C:\wamp\www\questoes_concursos\src\Template\PerguntasProvas\responder.ctp, line 41]
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2017-11-08 11:52:22 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Model\Entity\Pergunta::get_resp_by_id() in C:\wamp\www\questoes_concursos\src\Template\PerguntasProvas\responder.ctp on line 41
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Stack Trace:
+#0 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\que...', 41)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-11-08 11:52:50 Error: Fatal Error (1): Call to undefined method App\Model\Entity\Pergunta::get_resp_by_id() in [C:\wamp\www\questoes_concursos\src\Template\PerguntasProvas\responder.ctp, line 41]
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2017-11-08 11:52:50 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Model\Entity\Pergunta::get_resp_by_id() in C:\wamp\www\questoes_concursos\src\Template\PerguntasProvas\responder.ctp on line 41
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Stack Trace:
+#0 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\que...', 41)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-11-08 11:53:00 Error: Fatal Error (1): Call to undefined method App\Model\Entity\Pergunta::get_resp_by_id() in [C:\wamp\www\questoes_concursos\src\Template\PerguntasProvas\responder.ctp, line 41]
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2017-11-08 11:53:00 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Model\Entity\Pergunta::get_resp_by_id() in C:\wamp\www\questoes_concursos\src\Template\PerguntasProvas\responder.ctp on line 41
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Stack Trace:
+#0 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\que...', 41)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-11-08 11:55:18 Error: Fatal Error (1): Call to undefined method App\Model\Entity\Pergunta::get_resp_by_id() in [C:\wamp\www\questoes_concursos\src\Template\PerguntasProvas\responder.ctp, line 41]
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2017-11-08 11:55:18 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Model\Entity\Pergunta::get_resp_by_id() in C:\wamp\www\questoes_concursos\src\Template\PerguntasProvas\responder.ctp on line 41
+Request URL: /perguntas-provas/responder/1
+Referer URL: http://172.16.0.30:8080/questoes_concursos/perguntas-provas/responder/1
+Client IP: 192.168.100.117
+Stack Trace:
+#0 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\que...', 41)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
