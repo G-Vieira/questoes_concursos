@@ -30,7 +30,7 @@ $cakeDescription = 'Sobre';
         <h2> - Database Designer - </h2>
       </div>
       <div class="profile-bio">
-        <p>Hello there!</p>
+        <p>Sou bem de humanas!</p>
         <p>vazio</p>
       </div>
     </div>
@@ -46,6 +46,21 @@ $cakeDescription = 'Sobre';
       </div>
       <div class="profile-bio">
         <p>Hello there!</p>
+        <p>vazio</p>
+      </div>
+    </div>
+  </div>
+    <div class="large-4 columns">
+    <div class="profile-card" style="background: url(<?php echo $this->Url->build('/', true)?>/webroot/img/carlos_back_logo.jpg)">
+      <div class="header">
+        <a href="https://www.facebook.com/">
+          <?= $this->Html->image('carlos_logo.jpg'); ?>
+        </a>
+        <h1>Carlos Bonacina</h1>
+        <h2> - Mascote - </h2>
+      </div>
+      <div class="profile-bio">
+        <p>Au Au Au!</p>
         <p>vazio</p>
       </div>
     </div>
