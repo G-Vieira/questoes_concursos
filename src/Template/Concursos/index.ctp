@@ -32,7 +32,7 @@
                 <td><?= h($concurso->banca) ?></td>
                 <td><?= h($concurso->estado) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $concurso->id]) ?>
+                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $concurso->id]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $concurso->id]) ?>
                     <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $concurso->id], ['confirm' => __('Deseja deletar o usuario # {0}?', $concurso->id)]) ?>
                 </td>

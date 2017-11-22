@@ -52,7 +52,7 @@ $cakeDescription = 'Questões para Concurso';
 </nav>
 
 <header class="row">
-    <div <!--class="header-image" --><?= $this->Html->image('new-logo.PNG') ?></div>
+    <div class="header-image" ><?= $this->Html->image('new-logo.PNG') ?></div>
     <div class="header-title">
         <h1>Questões para concursos, o melhor site de Ibirubá para concursos.</h1>
     </div>

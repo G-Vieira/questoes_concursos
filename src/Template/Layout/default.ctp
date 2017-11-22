@@ -28,6 +28,7 @@ $cakeDescription = 'Questões para Concurso';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('app.css') ?>
 		<?= $this->Html->script('jquery.js') ?>
 
     <?= $this->fetch('meta') ?>

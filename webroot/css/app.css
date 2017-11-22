@@ -1,0 +1,10 @@
+.inpt_pesquisa{
+  max-width: 900px;
+  margin-right: 0;
+  float: left;
+}
+.btn_pesquisa{
+  background: #0071BC;
+  margin: 0 0 0 0;
+  padding: 9px;
+}

@@ -1,22 +1,23 @@
 <?php
 
-namespace App\Controller;
+  namespace App\Controller;
 
-use App\Controller\AppController;
-use Cake\Event\Event;
+  use App\Controller\AppController;
+  use Cake\Event\Event;
+  use Cake\Datasource\ConnectionManager;
 
-/**
- * Provas Controller
- *
- * @property \App\Model\Table\ProvasTable $Provas
- *
- * @method \App\Model\Entity\Prova[] paginate($object = null, array $settings = [])
- */
-class ProvasController extends AppController {
+  /**
+   * Provas Controller
+   *
+   * @property \App\Model\Table\ProvasTable $Provas
+   *
+   * @method \App\Model\Entity\Prova[] paginate($object = null, array $settings = [])
+   */
+  class ProvasController extends AppController {
 
     public function beforeFilter(Event $event) {
-        parent::beforeFilter($event);
-        $this->Auth->deny(['index', 'view', 'edit', 'delete']);
+      parent::beforeFilter($event);
+      $this->Auth->deny(['index', 'view', 'edit', 'delete']);
     }
 
     /**
@@ -25,19 +26,49 @@ class ProvasController extends AppController {
      * @return \Cake\Http\Response|void
      */
     public function index() {
-        $provas = $this->paginate($this->Provas);
+      $provas = $this->paginate($this->Provas);
 
-        $this->set(compact('provas'));
-        $this->set('_serialize', ['provas']);
+      $this->set(compact('provas'));
+      $this->set('_serialize', ['provas']);
     }
-    
-    public function listar(){
-        $provas = $this->paginate($this->Provas);
 
-        $this->set(compact('provas'));
-        $this->set('_serialize', ['provas']);
+    public function listar() {
+      if ($this->request->is('post')) {
+
+	$pesquisa = $this->request->getData();
+	$frase = str_replace(" ", "%", $pesquisa['pesquisa']);
+
+	if ($frase == "") {
+	  $provas = $this->paginate($this->Provas);
+	}
+	else {
+	  $resultado = $this->Provas->find('all', array(
+	    'join' => array(
+	      array(
+		'table' => 'Perguntas_Provas',
+		'type' => 'INNER',
+		'conditions' => 'Provas.id = Perguntas_Provas.prova_id'
+	      ),
+	      array(
+		'table' => 'Perguntas',
+		'type' => 'INNER',
+		'conditions' => 'Perguntas.id = Perguntas_Provas.pergunta_id'
+	      )
+	    ),
+	    'conditions' => array(
+	      "Perguntas.nome LIKE " => '%' . $frase . '%'
+	    )
+	  ));
+	  $provas = $this->paginate($resultado);
+	}
+      }
+      else {
+	$provas = $this->paginate($this->Provas);
+      }
+      $this->set(compact('provas'));
+      $this->set('_serialize', ['provas']);
     }
-    
+
     /**
      * View method
      *
@@ -46,12 +77,12 @@ class ProvasController extends AppController {
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null) {
-        $prova = $this->Provas->get($id, [
-            'contain' => []
-        ]);
+      $prova = $this->Provas->get($id, [
+	'contain' => []
+      ]);
 
-        $this->set('prova', $prova);
-        $this->set('_serialize', ['prova']);
+      $this->set('prova', $prova);
+      $this->set('_serialize', ['prova']);
     }
 
     /**
@@ -60,21 +91,21 @@ class ProvasController extends AppController {
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
     public function add() {
-        $prova = $this->Provas->newEntity();
-        if ($this->request->is('post')) {
-            $prova = $this->Provas->patchEntity($prova, $this->request->getData());
-            if ($this->Provas->save($prova)) {
-                $this->Flash->success(__('A prova foi cadastrada.'));
+      $prova = $this->Provas->newEntity();
+      if ($this->request->is('post')) {
+	$prova = $this->Provas->patchEntity($prova, $this->request->getData());
+	if ($this->Provas->save($prova)) {
+	  $this->Flash->success(__('A prova foi cadastrada.'));
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('Falha aoo cadastrar a prova.'));
-        }
-        $this->set(compact('prova'));
-        $this->set('_serialize', ['prova']);
+	  return $this->redirect(['action' => 'index']);
+	}
+	$this->Flash->error(__('Falha aoo cadastrar a prova.'));
+      }
+      $this->set(compact('prova'));
+      $this->set('_serialize', ['prova']);
 
-        $concursos = $this->Provas->Concursos->find('all');
-        $this->set('concursos', $concursos);
+      $concursos = $this->Provas->Concursos->find('all');
+      $this->set('concursos', $concursos);
     }
 
     /**
@@ -85,23 +116,23 @@ class ProvasController extends AppController {
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function edit($id = null) {
-        $prova = $this->Provas->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $prova = $this->Provas->patchEntity($prova, $this->request->getData());
-            if ($this->Provas->save($prova)) {
-                $this->Flash->success(__('A prova foi atualizada.'));
+      $prova = $this->Provas->get($id, [
+	'contain' => []
+      ]);
+      if ($this->request->is(['patch', 'post', 'put'])) {
+	$prova = $this->Provas->patchEntity($prova, $this->request->getData());
+	if ($this->Provas->save($prova)) {
+	  $this->Flash->success(__('A prova foi atualizada.'));
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('Falha ao atualizar a prova.'));
-        }
-        $this->set(compact('prova'));
-        $this->set('_serialize', ['prova']);
+	  return $this->redirect(['action' => 'index']);
+	}
+	$this->Flash->error(__('Falha ao atualizar a prova.'));
+      }
+      $this->set(compact('prova'));
+      $this->set('_serialize', ['prova']);
 
-        $concursos = $this->Provas->Concursos->find('all');
-        $this->set('concursos', $concursos);
+      $concursos = $this->Provas->Concursos->find('all');
+      $this->set('concursos', $concursos);
     }
 
     /**
@@ -112,15 +143,17 @@ class ProvasController extends AppController {
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null) {
-        $this->request->allowMethod(['post', 'delete']);
-        $prova = $this->Provas->get($id);
-        if ($this->Provas->delete($prova)) {
-            $this->Flash->success(__('A prova foi deletada.'));
-        } else {
-            $this->Flash->error(__('Falha ao deletar a prova.'));
-        }
+      $this->request->allowMethod(['post', 'delete']);
+      $prova = $this->Provas->get($id);
+      if ($this->Provas->delete($prova)) {
+	$this->Flash->success(__('A prova foi deletada.'));
+      }
+      else {
+	$this->Flash->error(__('Falha ao deletar a prova.'));
+      }
 
-        return $this->redirect(['action' => 'index']);
+      return $this->redirect(['action' => 'index']);
     }
 
-}
+  }
+  

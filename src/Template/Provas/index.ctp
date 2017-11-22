@@ -37,7 +37,7 @@
                 <td><?= h($prova->banca) ?></td>
                 <td><?= $this->Number->format($prova->concurso_id) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Vizualizar'), ['action' => 'view', $prova->id]) ?>
+                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $prova->id]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $prova->id]) ?>
                     <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $prova->id], ['confirm' => __('Deseja deletar # {0}?', $prova->id)]) ?>
                 </td>

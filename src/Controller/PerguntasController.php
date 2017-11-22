@@ -54,11 +54,11 @@ class PerguntasController extends AppController
         if ($this->request->is('post')) {
             $pergunta = $this->Perguntas->patchEntity($pergunta, $this->request->getData());
             if ($this->Perguntas->save($pergunta)) {
-                $this->Flash->success(__('The pergunta has been saved.'));
+                $this->Flash->success(__('A pergunta foi cadastrada.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The pergunta could not be saved. Please, try again.'));
+            $this->Flash->error(__('A pergunta não foi salva. Tente novamente.'));
         }
         $this->set(compact('pergunta'));
         $this->set('_serialize', ['pergunta']);
@@ -79,11 +79,11 @@ class PerguntasController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $pergunta = $this->Perguntas->patchEntity($pergunta, $this->request->getData());
             if ($this->Perguntas->save($pergunta)) {
-                $this->Flash->success(__('The pergunta has been saved.'));
+                $this->Flash->success(__('A pergunta foi atualizada.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The pergunta could not be saved. Please, try again.'));
+            $this->Flash->error(__('A pergunta não foi salva. Tente novamente.'));
         }
         $this->set(compact('pergunta'));
         $this->set('_serialize', ['pergunta']);
@@ -101,9 +101,9 @@ class PerguntasController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $pergunta = $this->Perguntas->get($id);
         if ($this->Perguntas->delete($pergunta)) {
-            $this->Flash->success(__('The pergunta has been deleted.'));
+            $this->Flash->success(__('A pergunta foi deletada.'));
         } else {
-            $this->Flash->error(__('The pergunta could not be deleted. Please, try again.'));
+            $this->Flash->error(__('A pergunta não foi deletada. Tente novamente.'));
         }
 
         return $this->redirect(['action' => 'index']);
