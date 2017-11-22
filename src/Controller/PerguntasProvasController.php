@@ -3,6 +3,7 @@
   namespace App\Controller;
 
   use App\Controller\AppController;
+  use Cake\Event\Event;
 
   /**
    * PerguntasProvas Controller
@@ -28,41 +29,28 @@
       $this->set('_serialize', ['perguntasProvas']);
     }
 
+    public function beforeFilter(Event $event) {
+      parent::beforeFilter($event);
+      $this->Auth->allow(['responder', 'respostas']);
+    }
+
+    //por fazer
     public function responder($id = null) {
-      $perguntasProva = $this->PerguntasProvas->find('all');
-      $data = $perguntasProva->toArray();
-
-      $listPerguntas = array();
-      $tblRespostas = array();
-      $keys = array();
-
-      //quando for submetido
-      if ($this->request->is('post')) {
-	$pkeys = $_POST['keys'];
-	$pkeys = explode(',', $pkeys);
-
-	foreach ($pkeys as $pk) {
-	  if ($pk == null) {
-	    break;
-	  }
-	  array_push($tblRespostas, $this->PerguntasProvas->Perguntas->get($pk));
-	  array_push($keys, $pk);
-	}
-      }
-      else {
-	foreach ($data as $res) {
-	  $comb = $res->toArray();
-	  if ($comb['prova_id'] == $id) {
-	    array_push($listPerguntas, $this->PerguntasProvas->Perguntas->get($comb['pergunta_id']));
-	    array_push($keys, $comb['pergunta_id']);
-	  }
-	}
-      }
-      $this->set('listPerguntas', $listPerguntas);
-      $this->set('tblRespostas', $tblRespostas);
-      $this->set('keys', $keys);
-
-      $this->set('_serialize', ['listPerguntas', 'tblRespostas', 'keys']);
+      $perguntas  = $this->PerguntasProvas->Perguntas->find('all',array(
+	'joins' => array(
+	  
+	),
+	'conditions' => array(
+	  
+	)
+      ));
+      
+      $this->set('perguntas', $perguntas);
+      $this->set('_serialize', ['perguntas']);
+    }
+    //por fazer
+    public function respostas($data = null) {
+      
     }
 
     /**
