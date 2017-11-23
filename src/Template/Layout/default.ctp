@@ -1,5 +1,6 @@
 <?php
-/**
+
+  /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -17,7 +18,7 @@ $cakeDescription = 'Questões para Concurso';
 ?>
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
@@ -29,32 +30,33 @@ $cakeDescription = 'Questões para Concurso';
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
     <?= $this->Html->css('app.css') ?>
-		<?= $this->Html->script('jquery.js') ?>
+    <?= $this->Html->script('jquery.js') ?>
+    <?= $this->Html->script('app.js') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
-        <div class="top-bar-section">
-            <ul class="left">
-              <li class="name">
+      <div class="top-bar-section">
+	<ul class="left">
+	  <li class="name">
                 <?php
                   //Se o usuario estiver logado, mostre uma frase de boas-vindas
                   if($authUser){
                     echo "<h1>" . $this->Html->link(__('Olá, ' . $authUser['username']), ['controller' => 'users', 'action' => 'view', $authUser['id']])  . "</h1>";
                   }
                 ?>
-              </li>
-            </ul>
-            <ul class="right">
-			    <li class="name">
-				    <h1><?= $this->Html->link(__('Home'), ['controller' => 'Pages']	) ?></h1>
-				</li>
-				<li class="name">
-				    <h1><?= $this->Html->link(__('Sobre'), ['controller' => 'Pages', 'action' => 'about']) ?></h1>
-				</li>
+	  </li>
+	</ul>
+	<ul class="right">
+	  <li class="name">
+	    <h1><?= $this->Html->link(__('Home'), ['controller' => 'Pages']	) ?></h1>
+	  </li>
+	  <li class="name">
+	    <h1><?= $this->Html->link(__('Sobre'), ['controller' => 'Pages', 'action' => 'about']) ?></h1>
+	  </li>
 		    <?php
                 //se o usuario estiver logado, exiba o link para usuarios
                 if($authUser) {
@@ -64,7 +66,7 @@ $cakeDescription = 'Questões para Concurso';
                   echo "<li class='name'><h1>" . $this->Html->link(__('Perguntas'), ['controller' => 'Perguntas', 'action' => 'index']) . "</h1></li>";
                 }
               ?>
-              <li class="name">
+	  <li class="name">
                 <?php
                   //se o usuario estiver logado, exiba o link para sair, senão exiba o link para entrar
                   if($authUser) {
@@ -79,9 +81,9 @@ $cakeDescription = 'Questões para Concurso';
                       );
                   }
                 ?>
-              </li>          
-            </ul>
-        </div>
+	  </li>          
+	</ul>
+      </div>
     </nav>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
@@ -89,5 +91,5 @@ $cakeDescription = 'Questões para Concurso';
     </div>
     <footer>
     </footer>
-</body>
+  </body>
 </html>

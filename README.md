@@ -2,7 +2,7 @@
 Trabalho final de Linguagem de Programação 4, Ciencia da Computação <br>
 IFRS Campus Ibiruba <br>
 
-Desenvolvido por Gian Paulo e Lisiane Reips <br>
+Desenvolvido por Gian Paulo, Lisiane Reips e Carlos Bonacina <br>
 
 Desenvolvido com CAKE PHP e suas dependencias, usando banco mysql. <br>
 
@@ -16,7 +16,6 @@ Versão 1.0 (e provavelmente a unica, kkkk)<br>
 --> Cadastro de Provas<br>
 --> Cadastro de Perguntas e Respostas<br>
 --> Realização das Perguntas (por implementar)<br>
---> Exibição de estatiscas das provas pelas respotas dos visitantes(por implementar)<br>
 
 Obs<br>
 Pasta propt_db contém o banco da aplicação<br>

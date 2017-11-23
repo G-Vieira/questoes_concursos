@@ -13,7 +13,7 @@
    * @method \App\Model\Entity\PerguntasProva[] paginate($object = null, array $settings = [])
    */
   class PerguntasProvasController extends AppController {
-
+    
     /**
      * Index method
      *
@@ -34,23 +34,49 @@
       $this->Auth->allow(['responder', 'respostas']);
     }
 
-    //por fazer
-    public function responder($id = null) {
-      $perguntas  = $this->PerguntasProvas->Perguntas->find('all',array(
-	'joins' => array(
-	  
+    private function getPerguntas($prova) {
+      $perguntas = $this->PerguntasProvas->Perguntas->find('all', array(
+	'join' => array(
+	  array(
+	    'table' => 'Perguntas_Provas',
+	    'type' => 'INNER',
+	    'conditions' => 'Perguntas.id = Perguntas_Provas.pergunta_id'
+	  ),
+	  array(
+	    'table' => 'Provas',
+	    'type' => 'INNER',
+	    'conditions' => 'Provas.id = Perguntas_Provas.prova_id'
+	  )
 	),
 	'conditions' => array(
-	  
+	  'Provas.id = ' => $prova
 	)
       ));
+      return $perguntas;
+    }
+
+    public function responder($id = null) {
+      if($id == null){
+	return $this->redirect(['controller' => 'Provas' ,'action' => 'listar']);
+      }
+      $perguntas = $this->getPerguntas($id);
+
+      $this->set('perguntas', $perguntas);
+      $this->set('prova', $id);
+      $this->set('_serialize', ['perguntas','prova']);
+    }
+
+    public function respostas() {
+      if(!$this->request->is('post')){
+	return $this->redirect(['controller' => 'Provas' ,'action' => 'listar']);
+      }
+      
+      $respostas = $this->request->getData();
+      $perguntas = $this->getPerguntas($respostas['prova']);
       
       $this->set('perguntas', $perguntas);
-      $this->set('_serialize', ['perguntas']);
-    }
-    //por fazer
-    public function respostas($data = null) {
-      
+      $this->set('respostas', $respostas);
+      $this->set('_serialize', ['perguntas','respostas']);
     }
 
     /**

@@ -4,7 +4,6 @@
 
   use App\Controller\AppController;
   use Cake\Event\Event;
-  use Cake\Datasource\ConnectionManager;
 
   /**
    * Provas Controller
@@ -17,6 +16,7 @@
 
     public function beforeFilter(Event $event) {
       parent::beforeFilter($event);
+      $this->Auth->allow(['listar']);
       $this->Auth->deny(['index', 'view', 'edit', 'delete']);
     }
 

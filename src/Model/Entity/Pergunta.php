@@ -35,16 +35,21 @@
 
     public function get_resp_by_id($id = 0) {
       $var;
-      
-        switch($id){
-        case 1: $var = $this->resp1; break;
-	case 2: $var = $this->resp2; break;
-	case 3: $var = $this->resp3; break;
-	case 4: $var = $this->resp4; break;
-	case 5: $var = $this->resp5; break;
-        default: "";
-        }
-      
+
+      switch ($id) {
+	case 1: $var = $this->resp1;
+	  break;
+	case 2: $var = $this->resp2;
+	  break;
+	case 3: $var = $this->resp3;
+	  break;
+	case 4: $var = $this->resp4;
+	  break;
+	case 5: $var = $this->resp5;
+	  break;
+	default: "";
+      }
+
       return $var;
     }
 

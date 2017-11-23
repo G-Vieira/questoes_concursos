@@ -7,13 +7,15 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
   <ul class="side-nav">
+    <li class="heading"><?= __('Painel') ?></li>
+    <li><?= $this->Html->link(__('Lista de provas'), ['controller' => 'Provas','action' => 'listar']) ?></li>    
   </ul>
 </nav>
 <div class="perguntas view large-9 medium-8 columns content">
   <form method="post" accept-charset="utf-8" action="/questoes_concursos/perguntas-provas/respostas/">
-    
+    <input type="hidden" name="prova" value="<?= $prova ?>">
     <?php 
-      $num = 0;  
+      $num = 1;  
       foreach($perguntas as $pergunta){ 
     ?>
     <h3><?= h($num . " - " .  $pergunta->nome) ?></h3>

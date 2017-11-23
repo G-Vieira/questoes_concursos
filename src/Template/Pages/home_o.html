@@ -1,0 +1,49 @@
+<div class="columns large-6">
+      <h4>Status Banco</h4>
+      <?php
+      try {
+          $connection = ConnectionManager::get('default');
+          $connected = $connection->connect();
+      } catch (Exception $connectionError) {
+          $connected = false;
+          $errorMsg = $connectionError->getMessage();
+          if (method_exists($connectionError, 'getAttributes')):
+              $attributes = $connectionError->getAttributes();
+              if (isset($errorMsg['message'])):
+                  $errorMsg .= '<br />' . $attributes['message'];
+              endif;
+          endif;
+      }
+      ?>
+      <ul>
+      <?php if ($connected): ?>
+          <li class="bullet success">Conectado ao banco.</li>
+      <?php else: ?>
+          <li class="bullet problem">Sem conexão com o banco. Edite o arquivo config/app.php.<br /><?= $errorMsg ?></li>
+      <?php endif; ?>
+      </ul>
+    </div>
+    <div class="columns large-6">
+        <h4>Permissões</h4>
+        <ul>
+        <?php if (is_writable(TMP)): ?>
+            <li class="bullet success">Seu diretório tmp esta com permissão de escrita.</li>
+        <?php else: ?>
+            <li class="bullet problem">Seu diretório tmp esta sem permissão de escrita.</li>
+        <?php endif; ?>
+
+        <?php if (is_writable(LOGS)): ?>
+            <li class="bullet success">Seu diretório de logs esta com permissão de escrita.</li>
+        <?php else: ?>
+            <li class="bullet problem">Seu diretório de logs esta sem permissão de escrita.</li>
+        <?php endif; ?>
+
+        <?php $settings = Cache::config('_cake_core_'); ?>
+        <?php if (!empty($settings)): ?>
+            <li class="bullet success">The <em><?= $settings['className'] ?>Engine</em> is being used for core caching.</li>
+        <?php else: ?>
+            <li class="bullet problem">Seu cachenão esta funcionando. Checar em config/app.php</li>
+        <?php endif; ?>
+        </ul>
+    </div>
+    <hr />
