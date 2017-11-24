@@ -66,10 +66,4 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
-    
-    public function about()
-    {
-        $this->set(compact('about'));
-        $this->set('_serialize', ['about']);
-    }
 }

@@ -54,9 +54,6 @@ $cakeDescription = 'Questões para Concurso';
 	  <li class="name">
 	    <h1><?= $this->Html->link(__('Home'), ['controller' => 'Pages']	) ?></h1>
 	  </li>
-	  <li class="name">
-	    <h1><?= $this->Html->link(__('Sobre'), ['controller' => 'Pages', 'action' => 'about']) ?></h1>
-	  </li>
 		    <?php
                 //se o usuario estiver logado, exiba o link para usuarios
                 if($authUser) {

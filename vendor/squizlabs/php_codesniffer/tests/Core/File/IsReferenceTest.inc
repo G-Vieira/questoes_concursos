@@ -91,7 +91,7 @@ $b = &$something;
 $b =& $something;
 
 /* assignByReferenceC */
-$b .= &$something;
+//$b .= &$something;
 
 /* assignByReferenceD */
 $myValue = &$obj->getValue();
