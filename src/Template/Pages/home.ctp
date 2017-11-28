@@ -57,7 +57,7 @@ $cakeDescription = 'Questões para Concurso';
         <h1>Questões para concursos, o melhor site de Ibirubá para concursos.</h1>
     </div>
 </header>
-
+<!--
 <div class="row">
     <div class="columns large-12">
         <div class="ctp-warning alert text-center">
@@ -65,36 +65,41 @@ $cakeDescription = 'Questões para Concurso';
         </div>
     </div>
 </div>
+-->
 
 <div class="row">
-    <div class="columns large-6">
-      <h4>Vazio</h4>
-    </div>
-    <div class="columns large-6">
-        <h4>Vazio</h4>
+    <div class="columns large-12">
+      <h4>Bem-Vindo</h4>
+      <p>
+	Este site é dedicado para o exercicio de Provas de concursos. Para começar
+	clique em 'Listar Provas' na aba à esquerda, e escolha uma prova para fazer.
+      </p>
     </div>
     <hr />
 </div>
 
 <div class="row">
     <div class="columns large-6">
-      <h4>Vazio</h4>
+      <h5>Para os nerds</h5>
+      Site construido em Php7.0<br> sobre o framework CakePhp 3.x,<br> utilizando banco de dados Mysql.
     </div>
     <div class="columns large-6">
-        <h4>Vazio</h4>
+        <h5>Sobre</h5>
+	Site construido por:<br>
+	@gian.vieira<br>
+	@lisiane.reips<br>
+	@carlos.bonacina<br>
     </div>
     <hr />
 </div>
-
-<div class="row">
-</div>
-
+<!--
 <div class="row">
     <div class="columns large-12 text-center">
         <h3 class="more">Vazio</h3>
     </div>
     <hr/>
 </div>
+-->
 <div id="intro" style="display:none;">
   <img id="introImg" src="" />
 </div>
