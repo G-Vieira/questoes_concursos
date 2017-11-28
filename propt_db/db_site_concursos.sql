@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Nov-2017 às 17:57
+-- Generation Time: 28-Nov-2017 às 11:52
 -- Versão do servidor: 5.5.37
 -- PHP Version: 5.6.25
 
@@ -68,7 +68,11 @@ CREATE TABLE `perguntas` (
 
 INSERT INTO `perguntas` (`id`, `nome`, `explicacao`, `resposta`, `resp1`, `resp2`, `resp3`, `resp4`, `resp5`) VALUES
 (1, 'A terra é plana?', 'Não, pois a gravidade deforma para o centro, de maneira que os corpos celestes, tomem uma forma arredondada.', 1, 'Não', 'Sim', '', '', ''),
-(2, 'Um Uno e uma Ferrari, andando à 80km/h ao mesmo tempo, logo:', 'Não tendo aceleração não podemos predizer a resposta correta, logo partindo do principio schrodinger,  podemos supor que todas as alternativas estão corretas, pois todas elas ocorrem.', 4, 'Eles estarão lado-a-lado', 'O Uno estara na frente', 'A ferrari estara na frente', 'Todas acima', 'Impossivel predizer sem a aceleração');
+(2, 'Um Uno e uma Ferrari, andando à 80km/h ao mesmo tempo, logo:', 'Não tendo aceleração não podemos predizer a resposta correta, logo partindo do principio schrodinger,  podemos supor que todas as alternativas estão corretas, pois todas elas ocorrem.', 4, 'Eles estarão lado-a-lado', 'O Uno estara na frente', 'A ferrari estara na frente', 'Todas acima', 'Impossivel predizer sem a aceleração'),
+(3, '01000101 01110011 01110100 01100001 00100000 01100101 01110011 01100011 01110010 01101001 01110100 01100001 00100000 11101001 00111010 ', '01010000 01101111 01110010 00100000 01110001 01110101 01100101 00100000 01100011 01101111 01101110 01110100 01100101 01101101 00100000 00110000 01110011 00100000 01100101 00100000 00110001 01110011 00101110 ', 2, '01001101 01101111 01110010 01110011 01100101 ', '01000010 01101001 01101110 01100001 01110010 01101001 01101111 ', '01000110 01110010 01100001 01101110 01100011 01100101 01110011', NULL, NULL),
+(4, 'Ser ou não ser?', 'Pois esta é a questão', 3, 'Ser', 'Não ser', 'Eis a questão', NULL, NULL),
+(5, 'Se um sujeito advogado, é parado em uma blitz, qual é o procedimento correto?', 'Sendo o sujeito um advogado, ele se encontra acima da lei, logo, os policias da bliz devem trata-lo como um juiz e deixa-lo ir embora.', 2, 'Ele deve colaborar com os policias', 'Ele deve dizer que é advogado, e ir embora', NULL, NULL, NULL),
+(6, 'Qual o titulo correto para um estudante de direito?', 'Pois o estudante de direito ja é um doutor, mesmo que ainda no primeiro semestre.', 3, 'Estudante', 'Juiz', 'Doutor', 'Advogado', 'Vossa Excelencia');
 
 -- --------------------------------------------------------
 
@@ -87,7 +91,11 @@ CREATE TABLE `perguntas_provas` (
 
 INSERT INTO `perguntas_provas` (`pergunta_id`, `prova_id`) VALUES
 (1, 2),
-(2, 2);
+(2, 2),
+(3, 2),
+(4, 1),
+(5, 3),
+(6, 3);
 
 -- --------------------------------------------------------
 
@@ -111,7 +119,8 @@ CREATE TABLE `provas` (
 
 INSERT INTO `provas` (`id`, `nome`, `ano`, `nivel`, `tipo`, `banca`, `concurso_id`) VALUES
 (1, 'Literatura e conhecimentos populares', 2017, 'SUPER', 'LT', 'ALB', 3),
-(2, 'Ciencias Gerais', 2017, 'SUPER', 'CG', 'ARC', 4);
+(2, 'Ciencias Gerais', 2017, 'SUPER', 'CG', 'ARC', 4),
+(3, 'Carteirada', 2017, 'SUPER', 'ADV', 'ADVBR', 1);
 
 -- --------------------------------------------------------
 
@@ -135,7 +144,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `role`, `created`, `modified`) VALUES
 (1, 'gian.vieira', '$2y$10$ljPt/wK7SwaVs/GTCEaO2.ezvSZZrGbLvojazXwgZc28tRvIPtKRW', 'gianpvieira@gmail.com', 'admin', '2017-08-14 17:27:00', '2017-08-14 17:27:00'),
-(2, 'Lisiane Reips', '$2y$10$3X9Yu5z9Xg6qAZNgLAOj4.bf/l9lSxAayeBmvzO9C/UiKs1aS3vpi', 'lisireips@gmail.com', 'admin', '2017-08-22 22:48:17', '2017-08-22 22:48:17');
+(2, 'Lisiane Reips', '$2y$10$3X9Yu5z9Xg6qAZNgLAOj4.bf/l9lSxAayeBmvzO9C/UiKs1aS3vpi', 'lisireips@gmail.com', 'admin', '2017-08-22 22:48:17', '2017-08-22 22:48:17'),
+(4, 'carlos', '$2y$10$TM96vhpS2t8kCZkW4ouaEeQrHvU5NOGaVWkmN2uXn7irsy3r2QDzW', 'carlos.bonacina@ibiruba.ifrs.edu.br', 'admin', '2017-11-28 11:14:35', '2017-11-28 11:14:35');
 
 --
 -- Indexes for dumped tables
@@ -188,17 +198,17 @@ ALTER TABLE `concursos`
 -- AUTO_INCREMENT for table `perguntas`
 --
 ALTER TABLE `perguntas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `provas`
 --
 ALTER TABLE `provas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
