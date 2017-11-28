@@ -3,6 +3,7 @@
   * @var \App\View\AppView $this
   * @var \App\Model\Entity\Prova[]|\Cake\Collection\CollectionInterface $provas
   */
+  $this->layout = true;
 ?>
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">

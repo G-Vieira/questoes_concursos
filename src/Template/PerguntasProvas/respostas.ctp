@@ -4,6 +4,7 @@
   * @var \App\View\AppView $this
   * @var \App\Model\Entity\Pergunta $pergunta
   */
+  $this->layout = true;
 ?>
 
 <div id="mascara" style="display:none;">
