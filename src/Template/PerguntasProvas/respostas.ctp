@@ -24,10 +24,10 @@
       ?>
       <?php 
 	  if($pergunta->resposta == $respostas['P'.$pergunta->id]){
-	    echo   "<h3>" . $this->Html->image('green_check.png') . h($num . " - " .  $pergunta->nome) . "</h3>";
+	    echo   "<h3>" . $this->Html->image('green_check.png') . "&nbsp;" . h($num . " - " .  $pergunta->nome) . "</h3>";
 	    echo "Resposta: " . $pergunta->get_resp_by_id($pergunta->resposta) . "<br>";
 	  }else{
-	    echo   "<h3>" . $this->Html->image('red_check.png') . h($num . " - " .  $pergunta->nome) . "</h3>";
+	    echo   "<h3>" . $this->Html->image('red_check.png') . "&nbsp;" .  h($num . " - " .  $pergunta->nome) . "</h3>";
 	    echo "Resposta Correta: " . $pergunta->get_resp_by_id($pergunta->resposta). "<br>";
 	  }
 	  echo "Explicação: " . $pergunta->explicacao . "<br><br>";
