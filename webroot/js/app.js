@@ -5,7 +5,7 @@ function showIntro(){
   setTimeout(
   function(){
     $("#intro").hide();
-  }, 2000);
+  }, 2500);
 }
 
 function loadingGif(){

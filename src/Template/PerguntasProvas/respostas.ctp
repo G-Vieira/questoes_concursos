@@ -22,13 +22,13 @@
         $num = 1;  
         foreach($perguntas as $pergunta){
       ?>
-  <h3><?= h($num . " - " .  $pergunta->nome) ?></h3>
       <?php 
 	  if($pergunta->resposta == $respostas['P'.$pergunta->id]){
-	    echo "<h4>Acertou!</h4>";
+	    echo   "<h3>" . $this->Html->image('green_check.png') . h($num . " - " .  $pergunta->nome) . "</h3>";
+            //echo "<h4>Acertou!</h4>";
 	    echo "Resposta: " . $pergunta->resp1 . "<br>";
 	  }else{
-	    echo "<h4>Errou!</h4>";
+	    echo   "<h3>" . $this->Html->image('red_check.png') . h($num . " - " .  $pergunta->nome) . "</h3>";
 	    echo "Resposta Correta: " . $pergunta->get_resp_by_id($pergunta->resposta). "<br>";
 	  }
 	  echo "Explicação: " . $pergunta->explicacao . "<br><br>";
