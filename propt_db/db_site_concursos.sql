@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Nov-2017 às 11:52
+-- Generation Time: 01-Dez-2017 às 12:27
 -- Versão do servidor: 5.5.37
 -- PHP Version: 5.6.25
 
@@ -43,6 +43,20 @@ INSERT INTO `concursos` (`id`, `nome`, `tipo`, `banca`, `estado`) VALUES
 (2, 'Concurso Publico', 'FUND', 'PPRS', 'RS'),
 (3, 'Academia de Literatura Brasileira', 'SUPER', 'ALB', 'RS'),
 (4, 'Academia Real de Ciencias', 'SUPER', 'ARC', 'RJ');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `feedbacks`
+--
+
+CREATE TABLE `feedbacks` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) DEFAULT 'anonimo',
+  `email` varchar(100) DEFAULT NULL,
+  `feed` varchar(300) NOT NULL,
+  `gravado_em` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -158,6 +172,12 @@ ALTER TABLE `concursos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `feedbacks`
+--
+ALTER TABLE `feedbacks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `perguntas`
 --
 ALTER TABLE `perguntas`
@@ -194,6 +214,11 @@ ALTER TABLE `users`
 --
 ALTER TABLE `concursos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `feedbacks`
+--
+ALTER TABLE `feedbacks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `perguntas`
 --

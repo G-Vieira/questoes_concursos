@@ -61,6 +61,7 @@ $cakeDescription = 'Questões para Concurso';
 	          echo "<li class='name'><h1>" . $this->Html->link(__('Concursos'), ['controller' => 'Concursos', 'action' => 'index']) . "</h1></li>";
                   echo "<li class='name'><h1>" . $this->Html->link(__('Provas'), ['controller' => 'Provas', 'action' => 'index']) . "</h1></li>";
                   echo "<li class='name'><h1>" . $this->Html->link(__('Perguntas'), ['controller' => 'Perguntas', 'action' => 'index']) . "</h1></li>";
+		  echo "<li class='name'><h1>" . $this->Html->link(__('Feedback'), ['controller' => 'Feedbacks', 'action' => 'index']) . "</h1></li>";
                 }
               ?>
 	  <li class="name">

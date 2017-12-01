@@ -54,13 +54,14 @@ $cakeDescription = 'Questões para Concurso';
 	  <li class="name">
 	    <h1><?= $this->Html->link(__('Home'), ['controller' => 'Pages']	) ?></h1>
 	  </li>
-		    <?php
+	      <?php
                 //se o usuario estiver logado, exiba o link para usuarios
                 if($authUser) {
                   echo "<li class='name'><h1>" . $this->Html->link(__('Usuarios'), ['controller' => 'Users', 'action' => 'index']) . "</h1></li>";
-				          echo "<li class='name'><h1>" . $this->Html->link(__('Concursos'), ['controller' => 'Concursos', 'action' => 'index']) . "</h1></li>";
+	          echo "<li class='name'><h1>" . $this->Html->link(__('Concursos'), ['controller' => 'Concursos', 'action' => 'index']) . "</h1></li>";
                   echo "<li class='name'><h1>" . $this->Html->link(__('Provas'), ['controller' => 'Provas', 'action' => 'index']) . "</h1></li>";
                   echo "<li class='name'><h1>" . $this->Html->link(__('Perguntas'), ['controller' => 'Perguntas', 'action' => 'index']) . "</h1></li>";
+		  echo "<li class='name'><h1>" . $this->Html->link(__('Feedback'), ['controller' => 'Feedbacks', 'action' => 'index']) . "</h1></li>";
                 }
               ?>
 	  <li class="name">

@@ -5438,3 +5438,154 @@ Stack Trace:
 #15 {main}
 
 
+2017-12-01 11:22:03 Error: [Cake\View\Exception\MissingTemplateException] Template file "Feedbacks\edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Feedbacks\\edit.ctp',
+)
+Request URL: /feedbacks/edit/1
+Stack Trace:
+#0 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\View\View.php(761): Cake\View\View->_getViewFileName(NULL)
+#1 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#2 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#3 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\FeedbacksController))
+#4 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\BaseApplication.php(103): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(106): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(95): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp\www\questoes_concursos\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp\www\questoes_concursos\webroot\index.php(37): Cake\Http\Server->run()
+#17 {main}
+
+
+2017-12-01 11:59:35 Warning: Warning (4096): Argument 1 passed to App\Controller\FeedbacksController::beforeFilter() must be an instance of App\Controller\Event, instance of Cake\Event\Event given, called in C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Event\EventManager.php on line 416 and defined in [C:\wamp\www\questoes_concursos\src\Controller\FeedbacksController.php, line 17]
+Request URL: /feedbacks/add
+Referer URL: http://172.16.0.30:8080/questoes_concursos/feedbacks
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\FeedbacksController::beforeFilter() - APP/Controller\FeedbacksController.php, line 17
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 416
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 393
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 110
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 502
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 114
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 103
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 106
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 95
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+DebugKit\Middleware\DebugKitMiddleware::__invoke() - ROOT\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 52
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-12-01 11:59:37 Warning: Warning (512): Unable to emit headers. Headers sent in file=C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Debugger.php line=850 in [C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 48]
+Request URL: /feedbacks/add
+Referer URL: http://172.16.0.30:8080/questoes_concursos/feedbacks
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 48
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-12-01 11:59:37 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Debugger.php:850) in [C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 149]
+Request URL: /feedbacks/add
+Referer URL: http://172.16.0.30:8080/questoes_concursos/feedbacks
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 149
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 54
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-12-01 11:59:37 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Debugger.php:850) in [C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /feedbacks/add
+Referer URL: http://172.16.0.30:8080/questoes_concursos/feedbacks
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 55
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-12-01 11:59:37 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\Debugger.php:850) in [C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /feedbacks/add
+Referer URL: http://172.16.0.30:8080/questoes_concursos/feedbacks
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 55
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-12-01 12:04:58 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\wamp\www\questoes_concursos\src\Template\Feedbacks\index.ctp, line 30]
+Request URL: /feedbacks
+Referer URL: http://172.16.0.30:8080/questoes_concursos/feedbacks/add
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2017-12-01 12:04:58 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '<' in C:\wamp\www\questoes_concursos\src\Template\Feedbacks\index.ctp on line 30
+Request URL: /feedbacks
+Referer URL: http://172.16.0.30:8080/questoes_concursos/feedbacks/add
+Client IP: 192.168.100.117
+Stack Trace:
+#0 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\que...', 30)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-12-01 12:05:10 Error: Fatal Error (1): Class 'Text' not found in [C:\wamp\www\questoes_concursos\src\Template\Feedbacks\index.ctp, line 30]
+Request URL: /feedbacks
+Referer URL: http://172.16.0.30:8080/questoes_concursos/feedbacks/add
+Client IP: 192.168.100.117
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2017-12-01 12:05:10 Error: [Cake\Error\FatalErrorException] Class 'Text' not found in C:\wamp\www\questoes_concursos\src\Template\Feedbacks\index.ctp on line 30
+Request URL: /feedbacks
+Referer URL: http://172.16.0.30:8080/questoes_concursos/feedbacks/add
+Client IP: 192.168.100.117
+Stack Trace:
+#0 C:\wamp\www\questoes_concursos\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'Text' no...', 'C:\\wamp\\www\\que...', 30)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
